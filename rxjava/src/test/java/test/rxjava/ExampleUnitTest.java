@@ -9,6 +9,7 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
 import rx.functions.Action1;
+import rx.functions.Func0;
 import rx.schedulers.Schedulers;
 
 /**
@@ -119,5 +120,17 @@ public class ExampleUnitTest {
                         System.out.println("from:" + s);
                     }
                 });
+        //defer
+        Observable.defer(new Func0<Observable<String>>() {
+            @Override
+            public Observable<String> call() {
+                return  Observable.just("defer");
+            }
+        }).subscribe(new Action1<String>() {
+            @Override
+            public void call(String s) {
+                System.out.println(s);
+            }
+        });
     }
 }
