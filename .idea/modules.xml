@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/StudyOpenApp.iml" filepath="$PROJECT_DIR$/StudyOpenApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/anr/anr.iml" filepath="$PROJECT_DIR$/anr/anr.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/butterknife/butterknife.iml" filepath="$PROJECT_DIR$/butterknife/butterknife.iml" />
       <module fileurl="file://$PROJECT_DIR$/eventbus3/eventbus3.iml" filepath="$PROJECT_DIR$/eventbus3/eventbus3.iml" />

@@ -8,6 +8,7 @@ import java.util.List;
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
+import rx.Subscription;
 import rx.functions.Action1;
 import rx.functions.Func0;
 import rx.schedulers.Schedulers;
@@ -78,7 +79,7 @@ public class ExampleUnitTest {
     private void useObservable() {
 
         //create
-        Observable.create(new Observable.OnSubscribe<String>() {
+       Subscription subscription =  Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
                 subscriber.onNext("create");
@@ -89,6 +90,7 @@ public class ExampleUnitTest {
                 System.out.println(s);
             }
         });
+
 
         //just
         Observable.just("just").subscribe(new Observer<String>() {
