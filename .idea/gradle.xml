@@ -14,8 +14,12 @@
             <option value="$PROJECT_DIR$/dagger" />
             <option value="$PROJECT_DIR$/databinding" />
             <option value="$PROJECT_DIR$/eventbus3" />
+            <option value="$PROJECT_DIR$/fragmentdemo" />
             <option value="$PROJECT_DIR$/fragmentvideoview" />
+            <option value="$PROJECT_DIR$/multicast" />
             <option value="$PROJECT_DIR$/ontrimmemory" />
+            <option value="$PROJECT_DIR$/recycleview" />
+            <option value="$PROJECT_DIR$/retrofit" />
             <option value="$PROJECT_DIR$/rxjava" />
           </set>
         </option>

@@ -11,8 +11,10 @@ public class MainModule {
         mView = view;
     }
 
+
     @Provides
     MainContract.View provideMainView() {
         return mView;
     }
+
 }

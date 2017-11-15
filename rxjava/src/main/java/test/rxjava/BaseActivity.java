@@ -8,12 +8,16 @@ import android.widget.Toast;
 
 import java.util.concurrent.TimeUnit;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action0;
-import rx.functions.Func1;
-import rx.subjects.BehaviorSubject;
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.ObservableTransformer;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
+import io.reactivex.functions.Predicate;
+import io.reactivex.subjects.BehaviorSubject;
 
 /**
  * ClassName: BaseActivity<p>
@@ -31,44 +35,49 @@ public class BaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Observable.interval(3, TimeUnit.SECONDS)
-                .doOnUnsubscribe(new Action0() {
+                .doOnDispose(new Action() {
                     @Override
-                    public void call() {
+                    public void run() throws Exception {
                         Log.i("rxjava", "unsubscribe");
                     }
                 })
                 .compose(this.<Long>bindLife())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<Long>() {
+                .subscribe(new Observer<Object>() {
                     @Override
-                    public void onCompleted() {
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull Object o) {
+                        Log.i("rxjava", "onNext " + o);
+
+                        Toast.makeText(BaseActivity.this, "aLong:" + o, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
                         Log.i("rxjava", "onCompleted");
 
                         Toast.makeText(BaseActivity.this, "onCompleted", Toast.LENGTH_SHORT).show();
-
                     }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onNext(final Long aLong) {
-                        Log.i("rxjava", "onNext " + aLong);
-
-                        Toast.makeText(BaseActivity.this, "aLong:" + aLong, Toast.LENGTH_SHORT).show();
-                    }
-                });
+                })
+        ;
     }
 
-    protected <T> Observable.Transformer<T, T> bindLife() {
-        return new Observable.Transformer<T, T>() {
+    protected <T> ObservableTransformer<T, T> bindLife() {
+        return new ObservableTransformer<T, T>() {
             @Override
-            public Observable<T> call(Observable<T> observable) {
-                return observable.takeUntil(subject.skipWhile(new Func1<Event, Boolean>() {
+            public ObservableSource<T> apply(@NonNull Observable<T> upstream) {
+                return upstream.takeUntil(subject.skipWhile(new Predicate<Event>() {
                     @Override
-                    public Boolean call(Event event) {
+                    public boolean test(@NonNull Event event) throws Exception {
                         return event != Event.DESTROY && event != Event.DETACH;
                     }
                 }));

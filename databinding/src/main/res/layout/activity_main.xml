@@ -2,12 +2,26 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+        <import type="android.databinding.ObservableList" />
+        <import type="android.databinding.ObservableMap" />
         <variable
             name="user"
             type="test.databinding.User" />
         <variable
             name="handlers"
             type="test.databinding.MyHandlers" />
+        <variable
+            name="presenter"
+            type="test.databinding.Presenter" />
+        <variable
+            name="user2"
+            type="test.databinding.User2" />
+        <variable
+            name="userlist"
+            type="ObservableList&lt;Object&gt;" />
+        <variable
+            name="usermap"
+            type="ObservableMap&lt;String,Object&gt;" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,5 +38,43 @@
             android:layout_height="wrap_content"
             android:text="@{user.password}"
             android:textSize="30sp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()-> presenter.clickBtn(user)}"
+            android:text="@{@string/app_name}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{ handlers::onClickFriend}"
+            android:text="@{user2.name}"
+            android:textSize="30sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user2.password}"
+            android:textSize="30sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(user2.age)}"
+            android:textSize="30sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{userlist[0]}'
+            android:textSize="30sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{usermap[`name`]}"
+            android:textSize="30sp" />
+
+        <test.databinding.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:paddingLeft="100dp"
+            android:subtitle="@{user.name}"/>
     </LinearLayout>
 </layout>
