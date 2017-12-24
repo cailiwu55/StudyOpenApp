@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/eventbus3/eventbus3.iml" filepath="$PROJECT_DIR$/eventbus3/eventbus3.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentdemo/fragmentdemo.iml" filepath="$PROJECT_DIR$/fragmentdemo/fragmentdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragmentvideoview/fragmentvideoview.iml" filepath="$PROJECT_DIR$/fragmentvideoview/fragmentvideoview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/materialdesign/materialdesign.iml" filepath="$PROJECT_DIR$/materialdesign/materialdesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/multicast/multicast.iml" filepath="$PROJECT_DIR$/multicast/multicast.iml" />
       <module fileurl="file://$PROJECT_DIR$/ontrimmemory/ontrimmemory.iml" filepath="$PROJECT_DIR$/ontrimmemory/ontrimmemory.iml" />
       <module fileurl="file://$PROJECT_DIR$/recycleview/recycleview.iml" filepath="$PROJECT_DIR$/recycleview/recycleview.iml" />
