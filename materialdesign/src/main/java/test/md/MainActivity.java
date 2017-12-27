@@ -1,11 +1,16 @@
 package test.md;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -22,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout mTextInputLayout;
     private EditText mEditText;
     private FloatingActionButton mFloatingActionButton;
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "FloatingActionBar clicked.", Toast.LENGTH_SHORT).show();
             }
         });
+        mTabLayout = findViewById(R.id.tablayout);
+        //mTabLayout.addTab(mTabLayout.newTab().setText("tab1"));
+        //mTabLayout.addTab(mTabLayout.newTab().setText("tab2"));
+        //mTabLayout.addTab(mTabLayout.newTab().setText("tab3"));
+        mTabLayout.setTabTextColors(0xffffffff,0xffff0000);
+        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
+        mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        mViewPager = findViewById(R.id.viewpager);
+        mViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
     private void snackbar() {
@@ -85,4 +102,29 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).show();
     }
+
+    class MyPagerAdapter extends FragmentPagerAdapter {
+
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return MyFragment.newInstance("This is " + position + " fragment.");
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return "PAGE"+position;
+        }
+
+        @Override
+        public int getCount() {
+            return 5;
+        }
+    }
+
 }
+
+
