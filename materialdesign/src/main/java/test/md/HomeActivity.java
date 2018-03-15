@@ -1,6 +1,5 @@
 package test.md;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -18,7 +17,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -60,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(MyFragment.newInstance("fragment0"));
         fragmentList.add(MyFragment.newInstance("fragment1"));
-        fragmentList.add(MyFragment.newInstance("fragment2"));
+        fragmentList.add(ListFragment.newInstance("fragment2"));
         List<String> titleList = new ArrayList<>();
         titleList.add("PAGE0");
         titleList.add("PAGE1");
@@ -180,9 +178,11 @@ public class HomeActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.menu_selectall:
                     showSnake("selectall");
+                    mode.finish();
                     break;
                 case R.id.menu_delete:
                     showSnake("delete");
+                    mode.finish();
                     break;
             }
             return false;

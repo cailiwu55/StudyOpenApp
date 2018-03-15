@@ -5,8 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:paddingLeft="8dp"
-    android:focusable="true"
-    android:clickable="true"
+    android:descendantFocusability="blocksDescendants"
     android:foreground="?android:attr/selectableItemBackground"
     android:paddingRight="8dp"
     android:paddingTop="8dp">

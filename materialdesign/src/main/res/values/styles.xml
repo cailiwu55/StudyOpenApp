@@ -23,5 +23,6 @@
     
     <style name="CustomActionMode" parent="@style/Widget.AppCompat.ActionMode">
         <item name="background">@color/colorPrimary</item>
+        <!--<item name="height">64dp</item>-->
     </style>
 </resources>

@@ -18,10 +18,13 @@
             <option value="$PROJECT_DIR$/fragmentvideoview" />
             <option value="$PROJECT_DIR$/materialdesign" />
             <option value="$PROJECT_DIR$/multicast" />
+            <option value="$PROJECT_DIR$/mvp" />
+            <option value="$PROJECT_DIR$/oneapp" />
             <option value="$PROJECT_DIR$/ontrimmemory" />
             <option value="$PROJECT_DIR$/recycleview" />
             <option value="$PROJECT_DIR$/retrofit" />
             <option value="$PROJECT_DIR$/rxjava" />
+            <option value="$PROJECT_DIR$/twoapp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
