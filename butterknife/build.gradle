@@ -33,7 +33,7 @@ dependencies {
     //butter knife
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-  compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+  compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
   mavenCentral()
