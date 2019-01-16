@@ -1,4 +1,4 @@
-package test.studyopenapp;
+package test.studyopenapp.memoryleak;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,7 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.lang.ref.WeakReference;
 
-public class MainActivity extends AppCompatActivity {
+import test.studyopenapp.R;
+
+/**
+ * Android使用Handler造成内存泄露的分析及解决方法
+ * https://www.cnblogs.com/xujian2014/p/5025650.html
+ */
+public class HanlderActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
