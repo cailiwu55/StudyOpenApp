@@ -1,3 +1,3 @@
-include ':app', ':butterknife', ':eventbus3', ':fragmentvideoview', ':rxjava', ':ontrimmemory', ':multicast', ':materialdesign', ':oneapp', ':twoapp', ':mvp', ':test', 
+include ':app', ':butterknife', ':eventbus3', ':fragmentvideoview', ':rxjava', ':ontrimmemory', ':multicast', ':materialdesign', ':oneapp', ':twoapp', ':mvp', ':test', ':aidl', 
     ':fragmentdemo',
     ':anr', ':dagger', ':databinding', ':retrofit', ':recycleview'

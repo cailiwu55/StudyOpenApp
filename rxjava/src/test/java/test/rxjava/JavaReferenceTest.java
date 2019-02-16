@@ -5,6 +5,8 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 
 /**
+ * Java 值传递和应用传递
+ * java中只有按值传递，对于引用类型的传递，形参是实参的一个拷贝，他们都指向同一个内存地址值
  * Created by clw on 2017/5/20.
  */
 

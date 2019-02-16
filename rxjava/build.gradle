@@ -43,9 +43,9 @@ dependencies {
     //rxlifecycle
     compile 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
     compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
-  compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-  //rxJava1
+    //rxJava1
     //    compile 'io.reactivex:rxandroid:1.2.1'
     //    compile 'io.reactivex:rxjava:1.3.0'
 
@@ -54,5 +54,5 @@ dependencies {
 
 }
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
